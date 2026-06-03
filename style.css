@@ -245,7 +245,7 @@ th {
    ========================================= */
 @media (max-width: 768px) {
   .slide { 
-    padding: 0.6rem 1rem; 
+    padding: 0.5rem 0.8rem; 
   }
   .slide-header h2 { 
     font-size: 1.1rem; 
@@ -260,6 +260,27 @@ th {
   .nav-btn { 
     padding: 0.5rem 0.8rem; 
     font-size: 0.8rem; 
+  }
+  
+  /* Ajustes específicos para mobile */
+  body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  .presentation-container {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+  
+  /* Melhora toque em elementos interativos */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Ajusta iframe do fluxograma para mobile */
+  .slide-fluxo iframe {
+    min-height: 400px;
   }
 }
 
@@ -276,6 +297,47 @@ th {
   }
   .card {
     padding: 0.6rem;
+  }
+}
+
+/* Otimização extrema para celulares em modo retrato */
+@media (max-width: 480px) and (orientation: portrait) {
+  .slide {
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .slide-header h2 {
+    font-size: 1rem;
+  }
+  
+  .slide-number {
+    font-size: 0.7rem;
+  }
+  
+  .slide-content {
+    font-size: 0.85rem;
+    padding-right: 0.3rem;
+  }
+  
+  .grid-2, .grid-3 {
+    gap: 0.4rem;
+  }
+  
+  .card {
+    padding: 0.5rem;
+  }
+  
+  .nav-btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.75rem;
+  }
+  
+  .logo-placeholder {
+    font-size: 1.2rem;
+  }
+  
+  h1 {
+    font-size: 1.4rem !important;
   }
 }
 /* =========================================
