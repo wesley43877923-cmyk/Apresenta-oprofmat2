@@ -62,3 +62,39 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
+// ===== SUPORTE A GESTOS DE TOQUE (SWIPE) =====
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+document.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+  const swipeThreshold = 50; // Distância mínima para considerar swipe
+  const diff = touchStartX - touchEndX;
+  
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      // Swipe para esquerda → próximo slide
+      nextSlide();
+    } else {
+      // Swipe para direita → slide anterior
+      prevSlide();
+    }
+  }
+}
+
+// ===== CORREÇÃO PARA CLIQUES EM MOBILE =====
+// Garante que os botões respondam ao touch
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('touchend', function(e) {
+    e.preventDefault(); // Previne comportamento padrão
+    this.click(); // Simula o clique
+  });
+});
