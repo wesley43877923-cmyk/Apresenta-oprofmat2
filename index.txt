@@ -57,7 +57,7 @@
         <li>Irracionalidade apresentada como dado axiomático, sem construção de significado.</li>
         <li>Esvaziamento conceitual e desconexão com fenômenos reais.</li>
       </ul>
-      <p>📚 <em>Foco: superar o viés procedimental e recuperar a construção de significado.</em></p>
+      <p><em>Foco: superar o viés procedimental e recuperar a construção de significado.</em></p>
     </div>
     <div class="slide-footer">
       <div class="progress-bar"><div class="progress-fill"></div></div>
