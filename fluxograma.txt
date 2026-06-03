@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fluxograma</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    min-height: 100vh;
+    color: #334155;
+    overflow-x: hidden;
+  }
+
+  #map-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 30px 20px;
+    scroll-behavior: smooth;
+  }
+
+  svg#connectors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .node-btn {
+    position: absolute;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 2;
+    text-align: left;
+    line-height: 1.4;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    backdrop-filter: blur(4px);
+  }
+
+  .node-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  }
+
+  .node-root    { background: #002a52; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 14px; }
+  .node-level0  { background: #64748b; }
+  .node-level1  { background: #1e293b; }
+  .node-level2  { background: #334155; }
+  .node-level3  { background: #004a8d; box-shadow: 0 4px 6px -1px rgba(0, 74, 141, 0.3); }
+
+  .toggle-circle {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    cursor: pointer;
+    transition: all .2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .toggle-circle:hover { 
+    transform: scale(1.2); 
+    background: #002a52;
+    border-color: #002a52;
+    color: #fff;
+  }
+
+  .toggle-circle .icon {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1;
+    transition: color .2s;
+  }
+
+  .toggle-circle:hover .icon {
+    color: #ffffff;
+  }
+
+  @keyframes nodeAppear {
+    from { opacity: 0; transform: scale(0.9) translateY(10px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  
+  .node-appear {
+    animation: nodeAppear .4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+</style>
+</head>
+<body>
+
+<div id="map-container">
+  <svg id="connectors"></svg>
+</div>
+
+<script>
+const DATA = {
+  id: "root",
+  label: "Conhecimento Especializado no Ensino de Logaritmos",
+  level: 0,
+  expanded: true,
+  children: [
+    {
+      id: "intro", label: "Introdução", level: 1, expanded: true,
+      children: [
+        {
+          id: "context", label: "Contextualização", level: 2, expanded: false,
+          children: [
+            { id: "c1", label: "Ensino de Logaritmos no EM", level: 3 },
+            { id: "c2", label: "Abordagem Procedimental", level: 3 },
+            { id: "c3", label: "Obstáculos Epistemológicos", level: 3 },
+            { id: "c4", label: "Dicotomias na Formação", level: 3 },
+            { id: "c5", label: "MTSK", level: 3 }
+          ]
+        },
+        {
+          id: "obj", label: "Objetivos", level: 2, expanded: false,
+          children: [
+            { id: "objg", label: "Objetivo Geral", level: 3, children: [
+                { id: "og1", label: "Caracterizar conhecimentos (MTSK)", level: 3 },
+                { id: "og2", label: "Desenvolver curso de extensão", level: 3 }
+            ]},
+            { id: "obje", label: "Objetivos Específicos", level: 3, children: [
+                { id: "oe1", label: "Analisar abordagens (inversa/área)", level: 3 },
+                { id: "oe2", label: "Investigar irracionalidade", level: 3 },
+                { id: "oe3", label: "Modelar e Aplicar", level: 3 }
+            ]}
+          ]
+        },
+        {
+          id: "natureza", label: "Natureza da Pesquisa", level: 2, expanded: false,
+          children: [
+            { id: "n1", label: "Qualitativa", level: 3 },
+            { id: "n3", label: "Teórico-Produtiva", level: 3 },
+            { id: "n4", label: "Sem dados empíricos", level: 3 }
+          ]
+        },
+        {
+          id: "metodo", label: "Metodologia", level: 2, expanded: false,
+          children: [
+            { id: "m1", label: "Revisão Bibliográfica", level: 3 },
+            { id: "m2", label: "Análise Documental (BNCC)", level: 3 },
+            { id: "m4", label: "Articulação com MTSK", level: 3 },
+            { id: "m5", label: "Elaboração do Produto", level: 3 }
+          ]
+        },
+        {
+          id: "justif", label: "Justificativa", level: 2, expanded: false,
+          children: [
+            { id: "j2", label: "Relevância Educação Matemática", level: 3 },
+            { id: "j3", label: "Alinhamento PROFMAT", level: 3 },
+            { id: "j4", label: "Formação de Professores", level: 3 }
+          ]
+        }
+      ]
+    },
+    {
+      id: "bncc", label: "Expectativas da BNCC", level: 1, expanded: false,
+      children: [
+        { id: "ciencia", label: "Matemática socialmente construída", level: 2 },
+        { id: "modelagem", label: "Modelagem de Fenômenos Reais", level: 2 },
+        { id: "representacoes", label: "Conversão de Múltiplas Representações", level: 2 }
+      ]
+    },
+    {
+      id: "mtsk", label: "Referencial Teórico MTSK", level: 1, expanded: false,
+      children: [
+        { id: "mk", label: "Conhecimento Matemático (MK)", level: 2, expanded: false, children: [
+            { id: "kot", label: "KoT: Conhecimento dos Tópicos", level: 3 },
+            { id: "ksm", label: "KSM: Estrutura Matemática", level: 3 },
+            { id: "kpm", label: "KPM: Prática Matemática", level: 3 }
+        ]},
+        { id: "pck", label: "Conhecimento Didático (PCK)", level: 2, expanded: false, children: [
+            { id: "kmt", label: "KMT: Ensino de Matemática", level: 3 },
+            { id: "kflm", label: "KFLM: Características da Aprendizagem", level: 3 },
+            { id: "kmls", label: "KMLS: Parâmetros de Aprendizagem", level: 3 }
+        ]},
+        { id: "crencas", label: "Crenças do Professor", level: 2 }
+      ]
+    },
+    {
+      id: "abordagens", label: "Abordagens de Introdução", level: 1, expanded: false,
+      children: [
+        { id: "inversa", label: "Inversa da Exponencial", level: 2 },
+        { id: "hiperbole", label: "Área sob a Hipérbole", level: 2 }
+      ]
+    },
+    {
+      id: "curso", label: "Estrutura do Curso de Extensão", level: 1, expanded: false,
+      children: [
+        { id: "mod1", label: "Módulo 1: História e Instrumentação", level: 2 },
+        { id: "mod2", label: "Módulo 2: Formalização e Irracionalidade", level: 2 },
+        { id: "mod3", label: "Módulo 3: Caracterização Geométrica", level: 2 },
+        { id: "mod4", label: "Módulo 4: Modelagem Variacional", level: 2 },
+        { id: "mod5", label: "Módulo 5: Aplicações Interdisciplinares", level: 2 }
+      ]
+    },
+    {
+      id: "recursos", label: "Recursos Tecnológicos", level: 1, expanded: false,
+      children: [
+        { id: "impresso", label: "Material Impresso", level: 2 },
+        { id: "geogebra", label: "GeoGebra Interativo", level: 2 },
+        { id: "calculadora", label: "Calculadora Científica", level: 2 },
+        { id: "applets", label: "Applets Específicos", level: 2 }
+      ]
+    }
+  ]
+};
+
+const NODE_W = { 0: 360, 1: 260, 2: 250, 3: 240 };
+const NODE_H = { 0: 48, 1: 40, 2: 38, 3: 36 };
+const COL_GAP = 140; 
+const ROW_GAP = 16;  
+
+let nodePositions = {};
+let togglePositions = {};
+
+function getSubtreeHeight(node) {
+  if (!node.expanded || !node.children || node.children.length === 0) {
+    return NODE_H[node.level] + ROW_GAP;
+  }
+  let totalHeight = 0;
+  node.children.forEach(child => {
+    totalHeight += getSubtreeHeight(child);
+  });
+  return Math.max(totalHeight, NODE_H[node.level] + ROW_GAP);
+}
+
+function assignPositions(node, x, yStart, yEnd) {
+  const midY = (yStart + yEnd) / 2 - NODE_H[node.level] / 2;
+  
+  nodePositions[node.id] = {
+    x: x,
+    y: midY,
+    w: NODE_W[node.level],
+    h: NODE_H[node.level],
+    level: node.level,
+    label: node.label,
+    visible: true
+  };
+
+  if (node.children && node.children.length > 0) {
+    togglePositions[node.id] = {
+      x: x + NODE_W[node.level] + 6,
+      y: midY + NODE_H[node.level] / 2 - 11,
+      visible: true
+    };
+  }
+
+  if (node.expanded && node.children) {
+    const childX = x + NODE_W[node.level] + COL_GAP;
+    let currentY = yStart;
+    
+    node.children.forEach(child => {
+      const childHeight = getSubtreeHeight(child);
+      assignPositions(child, childX, currentY, currentY + childHeight);
+      currentY += childHeight;
+    });
+  }
+}
+
+function findNode(id, node = DATA) {
+  if (node.id === id) return node;
+  if (node.children) {
+    for (const child of node.children) {
+      const found = findNode(id, child);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+function renderMap() {
+  nodePositions = {};
+  togglePositions = {};
+  
+  const totalHeight = getSubtreeHeight(DATA);
+  assignPositions(DATA, 60, 40, 40 + totalHeight);
+
+  const container = document.getElementById('map-container');
+  container.querySelectorAll('.node-btn, .toggle-circle').forEach(el => el.remove());
+
+  let maxX = 0, maxY = 0;
+  Object.values(nodePositions).forEach(p => {
+    maxX = Math.max(maxX, p.x + p.w + 50);
+    maxY = Math.max(maxY, p.y + p.h + 50);
+  });
+  
+  container.style.minWidth = maxX + 'px';
+  container.style.minHeight = maxY + 'px';
+
+  const svg = document.getElementById('connectors');
+  svg.setAttribute('width', maxX);
+  svg.setAttribute('height', maxY);
+  svg.innerHTML = '';
+
+  drawConnections(DATA, svg);
+
+  Object.entries(nodePositions).forEach(([id, pos]) => {
+    const btn = document.createElement('button');
+    btn.className = `node-btn node-level${pos.level} node-appear`;
+    btn.style.left = pos.x + 'px';
+    btn.style.top = pos.y + 'px';
+    btn.style.width = pos.w + 'px';
+    btn.textContent = pos.label;
+    btn.onclick = () => toggleNode(id);
+    container.appendChild(btn);
+  });
+
+  Object.entries(togglePositions).forEach(([id, pos]) => {
+    const node = findNode(id);
+    const circle = document.createElement('div');
+    circle.className = 'toggle-circle node-appear';
+    circle.style.left = pos.x + 'px';
+    circle.style.top = pos.y + 'px';
+
+    const icon = document.createElement('i');
+    icon.className = `icon fa-solid ${node.expanded ? 'fa-minus' : 'fa-plus'}`;
+    circle.appendChild(icon);
+
+    circle.onclick = (e) => {
+      e.stopPropagation();
+      toggleNode(id);
+    };
+    container.appendChild(circle);
+  });
+}
+
+function drawConnections(node, svg) {
+  if (!node.expanded || !node.children || node.children.length === 0) return;
+
+  const parentId = node.id;
+  const parentPos = nodePositions[parentId];
+  const togglePos = togglePositions[parentId];
+
+  const sx = togglePos ? togglePos.x + 22 : parentPos.x + parentPos.w;
+  const sy = togglePos ? togglePos.y + 11 : parentPos.y + parentPos.h / 2;
+
+  node.children.forEach(child => {
+    const childPos = nodePositions[child.id];
+    if (!childPos) return;
+
+    const ex = childPos.x;
+    const ey = childPos.y + childPos.h / 2;
+
+    const cpx1 = sx + (ex - sx) * 0.5;
+    const cpx2 = sx + (ex - sx) * 0.5;
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    const d = `M ${sx} ${sy} C ${cpx1} ${sy}, ${cpx2} ${ey}, ${ex} ${ey}`;
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', '#94a3b8'); 
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(path);
+
+    drawConnections(child, svg);
+  });
+}
+
+function toggleNode(id) {
+  const node = findNode(id);
+  if (!node || !node.children || node.children.length === 0) return;
+  node.expanded = !node.expanded;
+  renderMap();
+}
+
+renderMap();
+</script>
+</body>
+</html>

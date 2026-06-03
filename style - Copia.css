@@ -1,0 +1,277 @@
+:root {
+  --primary: #003366;
+  --secondary: #D4AF37;
+  --bg: #f8f9fa;
+  --text: #2c3e50;
+  --text-light: #5a6a7a;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.presentation-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  padding: 2rem 3rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--white);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+  animation: fadeIn 0.35s ease;
+}
+
+.slide.active { 
+  display: flex; 
+}
+
+@keyframes fadeIn { 
+  from { 
+    opacity: 0; 
+    transform: translateY(8px); 
+  } 
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+}
+
+.slide-header {
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.slide-number { 
+  font-size: 0.85rem; 
+  color: var(--text-light); 
+  font-weight: 600; 
+  letter-spacing: 1px; 
+}
+
+.slide-header h2 { 
+  font-size: 1.7rem; 
+  color: var(--primary); 
+  margin-top: 0.4rem; 
+}
+
+.slide-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.slide-content ul { 
+  margin-left: 1.5rem; 
+  margin-bottom: 1rem; 
+}
+
+.slide-content li { 
+  margin-bottom: 0.5rem; 
+}
+
+.slide-content strong { 
+  color: var(--primary); 
+}
+
+.highlight { 
+  background: #e6f0ff; 
+  padding: 0.2rem 0.5rem; 
+  border-radius: 4px; 
+  border-left: 3px solid var(--secondary); 
+  display: inline-block; 
+  margin-top: 0.5rem; 
+}
+
+.formula { 
+  font-family: 'Courier New', monospace; 
+  background: #f1f5f9; 
+  padding: 0.2rem 0.5rem; 
+  border-radius: 4px; 
+  font-weight: bold; 
+}
+
+.tag { 
+  display: inline-block; 
+  background: var(--secondary); 
+  color: var(--primary); 
+  padding: 0.15rem 0.5rem; 
+  border-radius: 12px; 
+  font-size: 0.8rem; 
+  font-weight: bold; 
+  margin: 0.15rem; 
+}
+
+.slide-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.progress-bar { 
+  flex: 1; 
+  height: 6px; 
+  background: #e0e6ed; 
+  border-radius: 3px; 
+  overflow: hidden; 
+}
+
+.progress-fill { 
+  height: 100%; 
+  background: var(--primary); 
+  width: 4%; 
+  transition: width 0.4s ease; 
+}
+
+.nav-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-btn:hover { 
+  background: #002244; 
+  transform: translateY(-1px); 
+}
+
+.nav-btn:disabled { 
+  background: #a0a8b0; 
+  cursor: default; 
+  transform: none; 
+  opacity: 0.6; 
+}
+
+.grid-2 { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.2rem; 
+  margin-top: 0.5rem; 
+}
+
+.grid-3 { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 0.8rem; 
+  margin-top: 0.5rem; 
+}
+
+.card { 
+  background: #f8f9fa; 
+  padding: 0.9rem; 
+  border-radius: 6px; 
+  border-left: 4px solid var(--primary); 
+}
+
+.center { 
+  text-align: center; 
+}
+
+.logo-placeholder { 
+  font-size: 1.8rem; 
+  margin-bottom: 0.5rem; 
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin-top: 0.8rem; 
+}
+
+th, td { 
+  padding: 0.7rem; 
+  border-bottom: 1px solid #eee; 
+  text-align: left; 
+}
+
+th { 
+  background: var(--primary); 
+  color: white; 
+}
+
+@media (max-width: 768px) {
+  .slide { 
+    padding: 1.2rem; 
+  }
+  .slide-header h2 { 
+    font-size: 1.3rem; 
+  }
+  .grid-2, .grid-3 { 
+    grid-template-columns: 1fr; 
+  }
+  .slide-content { 
+    font-size: 0.95rem; 
+  }
+  .nav-btn { 
+    padding: 0.6rem 0.9rem; 
+    font-size: 0.85rem; 
+  }
+}
+/* ===== FLUXOGRAMA NO SLIDE ===== */
+.slide-fluxo {
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.slide-fluxo iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: #f8fafc;
+}
+
+/* Ajustes específicos para o slide com fluxograma */
+#slide-2 .slide-header {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#slide-2 .slide-content {
+  flex: 1;
+  min-height: 0;
+}
+
+#slide-2 .slide-footer {
+  padding-top: 0.5rem;
+}

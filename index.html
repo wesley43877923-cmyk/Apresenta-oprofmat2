@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defesa de Mestrado PROFMAT - Wesley Oliveira Brum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="presentation-container">
+  <!-- SLIDE 1 -->
+  <section class="slide active" id="slide-1">
+    <div class="slide-content center" style="margin-top: 1.5rem;">
+      <div class="logo-placeholder"> UERJ / PROFMAT</div>
+      <h1 style="font-size: 1.8rem; color: var(--primary); margin: 1rem 0;">O CONHECIMENTO ESPECIALIZADO DO PROFESSOR DE MATEMÁTICA NO ENSINO DE LOGARITMOS</h1>
+      <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">Um Curso de Extensão para a Licenciatura em Matemática</p>
+      <p style="margin-top: 1.5rem; font-weight: bold;">Wesley Oliveira Brum</p>
+      <p style="color: var(--text-light);">Orientadora: Profa. Dra. Daniela Mendes Vieira da Silva<br>Coorientador: Prof. Dr. Marcello Montillo Provenza</p>
+      <p style="margin-top: 0.8rem; color: var(--secondary); font-weight: bold;">Rio de Janeiro, 2026</p>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+ !-- SLIDE 2 - FLUXOGRAMA INTERATIVO -->
+  <section class="slide" id="slide-2">
+    <div class="slide-header">
+      <span class="slide-number">2 / 25</span>
+      <h2>Visão Geral da Pesquisa</h2>
+    </div>
+    <div class="slide-content slide-fluxo">
+      <iframe 
+        src="fluxograma.html" 
+        title="Fluxograma da Pesquisa"
+        frameborder="0">
+      </iframe>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide" id="slide-3">
+    <div class="slide-header"><span class="slide-number">3 / 25</span><h2>Contextualização do Problema</h2></div>
+    <div class="slide-content">
+      <div style="text-align: center; margin: 1rem 0;">
+        <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCUzTjg-oCcyGAjl63Ob168ym_JtcRzopNtmBJhs-stbpNzhgfNPGMXZ_Qc9OmZGQOHU0-DasFKouti4gYi_3PCD17tR0SelFNypnOnO4uRXtg9bpsDVZeBLe9ilrnKz8PUXBMRly1rhi_r5kE4sWuX9KohXpDoE7W3yS774ed6XKleOLxNYG8mYbp-m7CI_KXqUF28nywM-2h80_Yz4bLrHqQwkXq6x120=w1280" 
+             alt="MTSK" 
+             style="max-width: 400px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+      </div>
+      <div class="highlight">"Para que eu preciso estudar isso?"</div>
+      <ul style="margin-top: 1rem;">
+        <li>Ensino tradicional focado em manipulação algébrica e definição inversa da exponencial.</li>
+        <li><strong>Obstáculos epistemológicos:</strong> incompreensão do domínio, uso indevido de propriedades, dificuldade de transitar entre registros.</li>
+        <li>Irracionalidade apresentada como dado axiomático, sem construção de significado.</li>
+        <li>Esvaziamento conceitual e desconexão com fenômenos reais.</li>
+      </ul>
+      <p> <em>Foco: superar o viés procedimental e recuperar a construção de significado.</em></p>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide" id="slide-4">
+    <div class="slide-header"><span class="slide-number">4 / 25</span><h2>Pergunta de Pesquisa</h2></div>
+    <div class="slide-content center" style="margin-top: 2rem;">
+      <blockquote style="border-left: 4px solid var(--secondary); padding: 1.5rem; background: #f8f9fa; border-radius: 6px; font-style: italic; color: var(--primary); font-size: 1.1rem;">
+        "Que conhecimentos especializados do professor de matemática devem ser mobilizados para o ensino de logaritmo no Ensino Médio, e de que modo um curso de extensão para licenciandos pode promover a reflexão crítica sobre essas dimensões do saber docente?"
+      </blockquote>
+      <p style="margin-top: 1rem; color: var(--text-light);">Articulação entre caracterização do saber docente e proposição de espaço formativo.</p>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide" id="slide-5">
+    <div class="slide-header"><span class="slide-number">5 / 25</span><h2>Objetivos</h2></div>
+    <div class="slide-content">
+      <p><strong>Objetivo Geral:</strong> Caracterizar, com base no MTSK, os conhecimentos especializados para o ensino de logaritmos e desenvolver um curso de extensão para licenciandos.</p>
+      <hr style="margin: 0.8rem 0; border: 0; border-top: 1px solid #ddd;">
+      <p><strong>Objetivos Específicos:</strong></p>
+      <ol>
+        <li>Analisar criticamente duas abordagens de introdução ao conceito (inversa vs. área hiperbólica).</li>
+        <li>Investigar como a irracionalidade e a análise variacional podem superar obstáculos de aprendizagem.</li>
+        <li>Elaborar materiais reflexivos integrando história da matemática, múltiplos registros semióticos e diretrizes da BNCC.</li>
+      </ol>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+      <!-- SLIDE 6: INTRODUÇÃO E EVOLUÇÃO -->
+  <section class="slide" id="slide-6">
+    <div class="slide-header">
+      <span class="slide-number">6 / 25</span>
+      <h2>Modelos de Conhecimento: Introdução e Evolução</h2>
+    </div>
+    <div class="slide-content">
+      <div class="grid-2">
+        <!-- Coluna 1: Introdução (Card Horizontal) -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.8rem; text-align: center;"> Por que estudar o conhecimento do professor?</h3>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <div style="background: rgba(0,51,102,0.05); padding: 0.6rem; border-radius: 6px; border-left: 3px solid var(--primary);">
+              <strong>Conhecimento Especializado</strong><br>
+              Integra saberes matemáticos, pedagógicos e contextuais, indo além do domínio do conteúdo.
+            </div>
+            <div style="background: rgba(0,51,102,0.05); padding: 0.6rem; border-radius: 6px; border-left: 3px solid var(--primary);">
+              <strong>Superação de Dicotomias</strong><br>
+              Fragmentação entre formação específica e pedagógica.
+            </div>
+            <div style="background: rgba(0,51,102,0.05); padding: 0.6rem; border-radius: 6px; border-left: 3px solid var(--primary);">
+              <strong>Prática Reflexiva</strong><br>
+              O saber e fazer construido por uma perpectiva técnica, sendo intrinsecamente especializado.
+            </div>
+          </div>
+        </div>
+        
+        <!-- Coluna 2: Evolução (Cards Horizontais Lado a Lado) -->
+        <div class="card" style="background: transparent; border: none; padding: 0;">
+          <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.8rem; text-align: center;"> Evolução dos Modelos</h3>
+          <div class="grid-3" style="gap: 0.5rem; margin-top: 0;">
+            <div class="card" style="padding: 0.6rem;">
+              <div style="text-align: center; margin-bottom: 0.4rem;">
+                <strong>1986</strong><br>
+                <span class="tag">PCK</span>
+              </div>
+              <small style="display: block; text-align: center; font-size: 0,rem;">
+                Lee Shulman<br><br>
+                • Transformação do conteúdo<br>
+                • Integração conteúdo-pedagogia<br>
+                • Modelo amplo e geral
+              </small>
+            </div>
+            <div class="card" style="padding: 0.6rem;">
+              <div style="text-align: center; margin-bottom: 0.4rem;">
+                <strong>2008</strong><br>
+                <span class="tag">MKT</span>
+              </div>
+              <small style="display: block; text-align: center; font-size: 0.75rem;">
+                Ball, Thames & Phelps<br><br>
+                • Especificidade p/ matemática<br>
+                • Distinção CCK vs. SCK<br>
+                • Base empírica
+              </small>
+            </div>
+            <div class="card" style="padding: 0.6rem; border-left-color: var(--secondary);">
+              <div style="text-align: center; margin-bottom: 0.4rem;">
+                <strong>2013</strong><br>
+                <span class="tag">MTSK</span>
+              </div>
+              <small style="display: block; text-align: center; font-size: 0.75rem;">
+                Carrillo <br><br>
+                • Todo conhecimento é especializado<br>
+                • 6 subdomínios integrados<br>
+                • Crenças no centro
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: O MODELO E OS DOIS DOMÍNIOS -->
+  <section class="slide" id="slide-7">
+    <div class="slide-header">
+      <span class="slide-number">7 / 25</span>
+      <h2>O Modelo MTSK e seus Dois Domínios</h2>
+    </div>
+    <div class="slide-content">
+      <div class="grid-2">
+        <!-- Coluna 1: O Modelo e Inovação (Card Horizontal) -->
+                  <!-- Imagem grande MTSK -->
+          <div style="flex: 1; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 6px; padding: 0.5rem;">
+            <img src="imagens/mtsk3.png" alt="Régua de cálculo - escalas logarítmicas" 
+                 style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
+          
+        
+        <!-- Coluna 2: Os Dois Domínios (Cards Horizontais Lado a Lado) -->
+        <div class="card" style="background: transparent; border: none; padding: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.8rem;">
+          <div class="card" style="padding: 0.8rem;">
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.3rem;">Conhecimento Matemático (MK)</h3>
+            <p style="font-size: 0.85rem; margin-bottom: 0.4rem;">Conhecimento da disciplina em si, sob a ótica de quem ensina.</p>
+            <div style="display: flex; gap: 0.4rem; justify-content: center;">
+              <span class="tag">KoT</span> <span class="tag">KSM</span> <span class="tag">KPM</span>
+            </div>
+          </div>
+          
+          <div class="card" style="padding: 0.8rem;">
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.3rem;">Conhecimento Didático (PCK)</h3>
+            <p style="font-size: 1rem; margin-bottom: 0.4rem;">Conhecimento sobre como ensinar e aprender matemática.</p>
+            <div style="display: flex; gap: 0.4rem; justify-content: center;">
+              <span class="tag">KMT</span> <span class="tag">KFLM</span> <span class="tag">KMLS</span>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 0.8rem; border-left-color: var(--secondary);">
+            <h3 style="color: var(--primary); font-size: 0.1rem; margin-bottom: 0.2rem;">Posição Central das Crenças</h3>
+            <p style="font-size: 1rem;">Influenciam todas as categorias, dando sentido às ações pedagógicas e filtrando a mobilização dos subdomínios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: OS SUBDOMÍNIOS -->
+  <section class="slide" id="slide-8">
+    <div class="slide-header">
+      <span class="slide-number">8 / 25</span>
+      <h2>Os Seis Subdomínios do MTSK</h2>
+    </div>
+    <div class="slide-content">
+      <div class="grid-2">
+        <!-- Coluna 1: MK (Cards Horizontais Lado a Lado) -->
+        <div class="card" style="background: transparent; border: none; padding: 0;">
+          <h3 style="color: var(--primary); font-size: 1.1rem; text-align: center; margin-bottom: 0.6rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.3rem;">
+            CONHECIMENTO MATEMÁTICO (MK)
+          </h3>
+          <p style="text-align: center; font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.6rem;">Conhecimento da disciplina sob a ótica de quem ensina.</p>
+          
+          <div class="grid-3" style="gap: 0.5rem; margin-top: 0;">
+            <div class="card" style="padding: 0.6rem;">
+              <div style="text-align: center; margin-bottom: 0.3rem;"><span class="tag">KoT</span></div>
+              <strong style="font-size: 0.8rem; display: block; text-align: center; margin-bottom: 0.3rem;">Tópicos Matemáticos</strong>
+              <small style="font-size: 0.7rem; line-height: 1.3;">
+                • Conceitos e definições<br>
+                • Propriedades e procedimentos<br>
+                • Exemplos e contraexemplos<br>
+                • Fenomenologia e representações<br>
+                • Aplicações e contextos
+              </small>
+            </div>
+            <div class="card" style="padding: 0.6rem;">
+              <div style="text-align: center; margin-bottom: 0.3rem;"><span class="tag">KSM</span></div>
+              <strong style="font-size: 0.8rem; display: block; text-align: center; margin-bottom: 0.3rem;">Estrutura Matemática</strong>
+              <small style="font-size: 0.7rem; line-height: 1.3;">
+                • Conexões entre tópicos<br>
+                • Conexões transversais<br>
+                • Ideias principais<br>
+                • Estruturas matemáticas<br>
+                • Unidade do conhecimento
+              </small>
+            </div>
+            <div class="card" style="padding: 0.6rem;">
+              <div style="text-align: center; margin-bottom: 0.3rem;"><span class="tag">KPM</span></div>
+              <strong style="font-size: 0.8rem; display: block; text-align: center; margin-bottom: 0.3rem;">Prática Matemática</strong>
+              <small style="font-size: 0.7rem; line-height: 1.3;">
+                • Modos de proceder<br>
+                • Raciocínio matemático<br>
+                • Demonstração e prova<br>
+                • Definição formal<br>
+                • Comunicação e padrões
+              </small>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Coluna 2: PCK (Cards Horizontais Lado a Lado) -->
+        <div class="card" style="background: transparent; border: none; padding: 0;">
+          <h3 style="color: var(--primary); font-size: 1.1rem; text-align: center; margin-bottom: 0.6rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.3rem;">
+             CONHECIMENTO DIDÁTICO (PCK)
+          </h3>
+          <p style="text-align: center; font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.6rem;">Conhecimento sobre como ensinar e aprender.</p>
+          
+          <div class="grid-3" style="gap: 0.5rem; margin-top: 0;">
+            <div class="card" style="padding: 0.6rem;">
+              <div style="text-align: center; margin-bottom: 0.3rem;"><span class="tag">KMT</span></div>
+              <strong style="font-size: 0.8rem; display: block; text-align: center; margin-bottom: 0.3rem;">Ensino de Matemática</strong>
+              <small style="font-size: 0.7rem; line-height: 1.3;">
+                • Estratégias de ensino<br>
+                • Tarefas e atividades<br>
+                • Exemplos didáticos<br>
+                • Recursos e materiais<br>
+                • Mediação pedagógica
+              </small>
+            </div>
+            <div class="card" style="padding: 0.6rem;">
+              <div style="text-align: center; margin-bottom: 0.3rem;"><span class="tag">KFLM</span></div>
+              <strong style="font-size: 0.8rem; display: block; text-align: center; margin-bottom: 0.3rem;">Características de Aprendizagem</strong>
+              <small style="font-size: 0.7rem; line-height: 1.3;">
+                • Como os alunos pensam<br>
+                • Erros comuns<br>
+                • Dificuldades e obstáculos<br>
+                • Teorias de aprendizagem<br>
+                • Empatia cognitiva
+              </small>
+            </div>
+            <div class="card" style="padding: 0.6rem;">
+              <div style="text-align: center; margin-bottom: 0.3rem;"><span class="tag">KMLS</span></div>
+              <strong style="font-size: 0.8rem; display: block; text-align: center; margin-bottom: 0.3rem;">Parâmetros de Aprendizagem</strong>
+              <small style="font-size: 0.7rem; line-height: 1.3;">
+                • Currículo oficial<br>
+                • Diretrizes (BNCC)<br>
+                • Normas educacionais<br>
+                • Objetivos de aprendizagem<br>
+                • Avaliação institucional
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+ <!-- SLIDE 9: MATEMÁTICA COMO SABER ESPECIALIZADO -->
+<section class="slide" id="slide-9">
+  <div class="slide-header">
+    <span class="slide-number">9 / 25</span>
+    <!-- ERRO CORRIGIDO: Título faltava aqui -->
+    <h2>Matemática como Saber Especializado</h2>
+  </div> 
+
+  <!-- Adicionei uma div para centralizar e ajustar a tabela -->
+  <div class="slide-content" style="display: flex; justify-content: center; align-items: center; padding: 2rem;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+      <thead>
+        <tr style="background-color: var(--primary); color: white;">
+          <th style="padding: 10px; border: 1px solid #ddd;">Capítulo da Dissertação</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">Módulo do Produto</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">Atividade-Chave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Cap. 3 (História)</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Módulo 1</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Tábuas de Napier/Briggs & Régua de Cálculo</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Cap. 4 (Função Inversa)</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Módulo 2</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Aproximações Sucessivas para 2ˣ=5</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Cap. 5 (Área Hiperbólica)</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Módulo 3</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Somas Trapezoidais & L(ab)=L(a)+L(b)</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Cap. 8 (Análise Variacional)</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Módulo 4</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Modelagem do Resfriamento do Café (GeoGebra)</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border: 1px solid #ddd;">Cap. 6 (BNCC/Cálculo)</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Módulo 5</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">Lei de Kleiber, Benford, Richter & C-14</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="slide-footer">
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+    <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+    <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+  </div>
+</section>
+
+    <!-- SLIDE 10: MATEMÁTICA COMO SABER ESPECIALIZADO -->
+  <section class="slide" id="slide-10">
+    <div class="slide-header">
+      <span class="slide-number">10 / 25</span>
+      <h2>A História da Matemática como Saber Especializado</h2>
+    </div>
+    <div class="slide-content">
+      <div class="grid-2">
+        <!-- Coluna 1: Saber Especializado -->
+        <div class="card">
+          <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">História da Matemática e o Saber Especializado do Professor</h3>
+          <p style="margin-bottom: 0.8rem; font-size: 1rem;">
+            A história da Matemática não é um mero adereço ou curiosidade: no modelo MTSK, ela integra o <strong>Conhecimento dos Tópicos (KoT)</strong>. Compreender a gênese, a evolução e os usos sociais de um conceito é parte fundamental do saber docente especializado, pois permite ao professor explicar não apenas <em>como</em> se opera, mas <em>por que</em> e <em>para que</em> o conhecimento foi criado.
+          </p>
+          <div style="background: rgba(0,51,102,0.05); padding: 0.8rem; border-radius: 6px; border-left: 4px solid var(--primary); margin-top: 0.6rem;">
+            <strong style="color: var(--primary);">História dos logaritmos:</strong>
+            <p style="margin-bottom: 0.8rem; font-size: 1rem;">
+            Criados por <strong>John Napier (1614)</strong> e aperfeiçoados por <strong>Henry Briggs</strong> (logaritmos decimais), os logaritmos foram a resposta à necessidade premente de simplificar cálculos astronômicos, náuticos e comerciais no Renascimento. Johannes Kepler declarou que a invenção “dobrou a vida dos astrônomos”, ao transformar multiplicações em somas. A régua de cálculo materializou essa ideia por mais de três séculos.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Coluna 2: Conhecimento Socialmente Construído -->
+        <div class="card">
+          <h3 style="color: var(--primary); font-size: 1.2rem; margin-bottom: 0.8rem;">Matemática: Conhecimento Socialmente Construído</h3>
+          <p style="margin-bottom: 0.8rem; font-size: 1rem;">
+            A matemática não é um conhecimento pronto e acabado, mas uma <strong>construção histórica e social</strong>, resultado das necessidades humanas e do desenvolvimento cultural das civilizações. Essa visão está alinhada à BNCC, que preconiza o letramento matemático baseado na compreensão da matemática como linguagem viva e cultural, desenvolvendo competências como argumentação, investigação e apreciação da ciência.
+          </p>
+          <div style="background: rgba(0,51,102,0.05); padding: 0.8rem; border-radius: 6px; border-left: 4px solid var(--secondary); margin-top: 0.6rem;">
+            <strong style="color: var(--primary);">Implicações Pedagógicas:</strong>
+            <p style="margin-bottom: 0.8rem; font-size: 1rem;">
+            A história da matemática é um recurso didático potente para <strong>humanizar a disciplina</strong> e combater o formalismo vazio. No MTSK, esse saber alimenta o <strong>KMT</strong> (estratégias contextualizadas) e o <strong>KFLM</strong> (antecipação de obstáculos), além de dialogar com o <strong>KMLS</strong> (alinhamento à BNCC). O professor que domina a história dos logaritmos pode construir sequências que partem da <em>necessidade</em> do conceito antes de sua formalização algébrica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+    <!-- SLIDE 11: RÉGUA DE CÁLCULO -->
+  <section class="slide" id="slide-11">
+    <div class="slide-header">
+      <span class="slide-number">11 / 25</span>
+      <h2>Régua de Cálculo: Instrumento Logarítmico</h2>
+    </div>
+    <div class="slide-content">
+      <div class="grid-2" style="height: 100%; align-items: stretch;">
+        
+        <!-- COLUNA ESQUERDA: Régua completa + Resumo -->
+        <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 0.5rem; border-right: 2px solid var(--primary);">
+          
+          <h3 style="color: var(--primary); font-size: 1.3rem; text-align: center; margin-bottom: 0.5rem;">
+            Régua de cálculo
+          </h3>
+          
+          <!-- Imagem grande da régua completa -->
+          <div style="flex: 1; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 6px; padding: 0.5rem;">
+            <img src="imagens/fig1.png" alt="Régua de cálculo - escalas logarítmicas" 
+                 style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
+          
+          <p style="flex: 1; color: var(--primary); text-align: justify; font-weight: bold; margin-top: 0.5rem; font-size: 1rem;">
+    Sob a perspectiva histórica, a régua de cálculo, materializou as tábuas de logaritmos em um instrumento físico que funcionou como "computador analógico"por quase quatro séculos. Tecnicamente, seu funcionamento baseia-se em escalas logarítmicas de espaçamento variável, onde o ato físico de deslizar as réguas realiza a adição de comprimentos, transformando visualmente operações de multiplicação em soma através da propriedade fundamental 
+log(a⋅b)=loga+logb
+. Na Atividade 1.2 do produto educacional, esse instrumento é ressignificado didaticamente para conectar o registro algébrico ao geométrico, permitindo que o futuro professor vivencie a lógica computacional dos logaritmos de forma concreta e tangível.
+</p>
+        </div>
+        
+        <!-- COLUNA DIREITA: 3 exemplos empilhados -->
+        <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 0.5rem; gap: 0.5rem;">
+          <!-- Exemplo 1 -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem; text-align: center;">
+              Exemplos de uso:
+            </h4>
+
+          <!-- Exemplo 1 -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.3rem; text-align: center;">
+              Multiplicação e divisão por 12
+            </h4>
+            <div style="flex: 1; background: #f8fafc; border-radius: 6px; padding: 0.3rem; display: flex; align-items: center; justify-content: center;">
+              <img src="imagens/fig2.png" alt="Multiplicação e divisão por 12" 
+                   style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+          </div>
+
+          <!-- Exemplo 2 -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.3rem; text-align: center;">
+              Multiplicação e divisão por 4
+            </h4>
+            <div style="flex: 1; background: #f8fafc; border-radius: 6px; padding: 0.3rem; display: flex; align-items: center; justify-content: center;">
+              <img src="imagens/fig3.png" alt="Multiplicação e divisão por 4" 
+                   style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+          </div>
+
+          <!-- Exemplo 3 -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.3rem; text-align: center;">
+              Encontrando o valor de log(x)
+            </h4>
+            <div style="flex: 1; background: #f8fafc; border-radius: 6px; padding: 0.3rem; display: flex; align-items: center; justify-content: center;">
+              <img src="imagens/fig4.png" alt="Encontrando logaritmo na régua" 
+                   style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+  
+  <!-- SLIDE 12: MÓDULO 2 - IRRACIONALIDADE E APROXIMAÇÕES -->
+  <section class="slide" id="slide-12">
+    <div class="slide-header">
+      <span class="slide-number">12/ 25</span>
+      <h2>Módulo 2: O Problema Epistemológico da Potenciação e a Irracionalidade</h2>
+    </div>
+    <div class="slide-content">
+      <div class="grid-2">
+        
+        <!-- COLUNA 1: O Problema da Potenciação -->
+        <div>
+          <h3 style="color: var(--primary); font-size: 1.1rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
+             A Circularidade Apontada por Elon Lages Lima
+          </h3>
+          
+          <div class="card" style="margin-bottom: 0.6rem; border-left-color: var(--secondary);">
+            <p style="font-size: 0.9rem; font-style: italic; line-height: 1.4;">
+              "A definição de logaritmo como expoente só faz sentido pleno quando se tem uma teoria satisfatória das potências de expoente real, o que exige o conceito de limite."
+            </p>
+            <small style="display: block; text-align: right; margin-top: 0.3rem; color: var(--text-light);">(LIMA, 2001)</small>
+          </div>
+
+          <div class="card" style="margin-bottom: 0.6rem;">
+            <strong style="font-size: 0.95rem;">A Definição Tradicional Falha</strong>
+            <p style="font-size: 0.85rem; margin-top: 0.3rem;">
+              No Ensino Fundamental, apresenta-se: <em>"O expoente é o número de vezes que a base aparece na multiplicação"</em>. Essa definição funciona para 2³, mas colapsa diante de:
+            </p>
+            <ul style="margin-left: 1rem; margin-top: 0.3rem; font-size: 0.85rem;">
+              <li>2<sup>1/2</sup> → "multiplicar meia vez"?</li>
+              <li>2<sup>√3</sup> → "multiplicar √3 vezes"?</li>
+              <li>5<sup>π</sup> → "multiplicar π vezes"?</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <strong style="font-size: 0.95rem;">Proposta de Refinamento</strong>
+            <p style="font-size: 0.85rem; margin-top: 0.3rem;">
+              "A potenciação é a operação que, para expoentes naturais, representa a multiplicação repetida da base, mas que se estende para outros números como uma <strong>transformação de escala contínua</strong>."
+                      </div>
+        </div>
+        
+        <!-- COLUNA 2: Irracionalidade e Aproximações -->
+        <div>
+          <h3 style="color: var(--primary); font-size: 1.1rem; border-bottom: 2px solid var(--secondary); padding-bottom: 0.3rem; margin-bottom: 0.6rem;">
+            Irracionalidade e Aproximações Sucessivas
+          </h3>
+
+          <div class="card" style="margin-bottom: 0.6rem;">
+             <h4>Mostrando a Irracionalidade (TFA)</h4>
+        <p style="font-size: 0.9rem;">
+          Vamos provar que <span class="formula">log<sub>2</sub> 5 </span> não é racional usando o Teorema Fundamental da Aritmética (fatoração única).
+        </p>
+        
+      <div class="proof-steps">
+  <p>1. Suponha que <span class="formula">log<sub>2</sub> 5 = p/q</span> (racional, com <em>p, q</em> inteiros).</p>
+  <p>2. Pela definição de logaritmo: <span class="formula">2<sup>p/q</sup> = 5</span>.</p>
+  <p>3. Elevando ambos os lados à potência <em>q</em>:</p>
+  <p class="highlight-equation formula">2<sup>p</sup> = 5<sup>q</sup></p>
+  <p>4. <strong>Contradição:</strong> O lado esquerdo (<span class="formula">2<sup>p</sup></span>) é um número par, enquanto o lado direito (<span class="formula">5<sup>q</sup></span>) é ímpar. Um número par jamais pode ser igual a um ímpar.</p>
+  <p class="conclusion">Logo, <span class="formula">log<sub>2</sub> 5</span> <strong>não é racional</strong>.</p>
+</div>
+
+          <div class="card" style="border-left-color: var(--secondary);">
+            <strong style="font-size: 0.95rem;">Atividade: Aproximações Sucessivas para 2<sup>x</sup> = 5</strong>
+            <p style="font-size: 0.85rem; margin-top: 0.3rem;">
+              <strong>Problema disparador:</strong> encontrar o expoente <em>x</em> tal que 2<sup>x</sup> = 5.
+            </p>
+            <ul style="margin-left: 1rem; margin-top: 0.3rem; font-size: 0.8rem; line-height: 1.4;">
+              <li><strong>1º passo:</strong> 2² = 4 e 2³ = 8, logo x ∈ (2, 3)</li>
+              <li><strong>2º passo:</strong> Testar 2<sup>2,1</sup>, 2<sup>2,2</sup>, 2<sup>2,3</sup>, 2<sup>2,4</sup> na calculadora</li>
+              <li><strong>3º passo:</strong> Refinar com 2 casas decimais: 2<sup>2,31</sup>, 2<sup>2,32</sup>, 2<sup>2,33</sup>, 2<sup>2,34</sup></li>
+              <li><strong>4º passo:</strong> Visualizar no GeoGebra a interseção entre y = 2<sup>x</sup> e y = 5, com zoom nos intervalos encaixantes</li>
+            </ul>
+            <div class="highlight" style="margin-top: 0.4rem; font-size: 0.8rem;">
+              <strong>Conclusão:</strong> Nenhum decimal finito ou dízima periódica satisfaz exatamente 2<sup>x</sup> = 5 → o expoente é irracional → justifica-se o símbolo <span class="formula">log₂(5)</span> como representação exata.
+            </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+    <!-- SLIDE 13: GEOGEBRA INTERATIVO -->
+  <section class="slide" id="slide-13">
+    <div class="slide-header">
+      <span class="slide-number">13 / 25</span>
+      <h2>Exploração Interativa - GeoGebra</h2>
+    </div>
+    <div class="slide-content slide-geogebra-content">
+      <div class="geogebra-wrapper">
+        <iframe 
+          src="https://www.geogebra.org/calculator/nwpgs66a?embed" 
+          width="100%" 
+          height="100%" 
+          allowfullscreen 
+          style="border: none;" 
+          frameborder="0">
+        </iframe>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+   <!-- SLIDE 14 -->
+
+  <section class="slide" id="slide-14">
+    <div class="slide-header">
+      <span class="slide-number">14 / 25</span>
+      <h2>Transformação de Área: T(x,y) = (kx, y/k)</h2>
+    </div>
+    <div class="slide-content center" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+      
+      
+      <h3 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;">Exploração Interativa</h3>
+      
+      <p style="font-size: 1.1rem; max-width: 800px; margin-bottom: 2rem; color: var(--text);">
+        A transformação geométrica <strong>T(x, y) = (kx, y/k)</strong> preserva a área ao ser aplicada nos pontos de polígonos sob a hipérbole.
+        <br><br>
+        <em>Clique no botão abaixo para abrir a aplicação em tela cheia e manipular o valor de <strong>k</strong>.</em>
+      </p>
+
+      <button class="btn-open-app" onclick="openApp()">
+        Abrir Aplicação Interativa
+      </button>
+
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+
+  <!-- SLIDE 15 -->
+   <!-- SLIDE 15: GEOGEBRA INTERATIVO -->
+  <section class="slide" id="slide-15">
+    <div class="slide-header">
+      <span class="slide-number">15 / 25</span>
+      <h2> Modulo 4: Exploração Interativa Para Definir L(a) Como Área no  GeoGebra</h2>
+    </div>
+    <div class="slide-content" style="padding: 0; overflow: hidden; display: flex;">
+      <iframe 
+        src="https://www.geogebra.org/calculator/cawamavj?embed" 
+        style="width: 100%; height: 100%; border: none; display: block;" 
+        allowfullscreen 
+        frameborder="0">
+      </iframe>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 16: GEOGEBRA INTERATIVO -->
+  <section class="slide" id="slide-16">
+    <div class="slide-header">
+      <span class="slide-number">16/ 25</span>
+      <h2>Exploração Interativa - GeoGebra</h2>
+    </div>
+    <div class="slide-content" style="padding: 0; overflow: hidden; display: flex;">
+      <iframe 
+        src="https://www.geogebra.org/calculator/hzuyqsgt?embed" 
+        style="width: 100%; height: 100%; border: none; display: block;" 
+        allowfullscreen 
+        frameborder="0">
+      </iframe>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 17 -->
+  <section class="slide" id="slide-17">
+    <div class="slide-header"><span class="slide-number">17 / 25</span><h2>Módulo 4: Modelagem (Resfriamento do Café)</h2></div>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div class="card">
+          <strong> Análise Variacional</strong><br>
+          Dados inventados → cálculo de razões <span class="formula">T(t+Δ)/T(t)</span><br>
+          Identificação do padrão exponencial (razão constante).
+        </div>
+        <div class="card">
+          <strong> Vídeo-Análise & GeoGebra</strong><br>
+          Extração de dados reais → ajuste exponencial<br>
+          Comparação com a Lei de Resfriamento de Newton.
+        </div>
+      </div>
+      <p style="margin-top: 0.8rem;"><span class="formula">T(t) = T_amb + (T₀ - T_amb)e⁻ᵏᵗ</span></p>
+      <p><span class="tag">KMT</span> Tecnologia & <span class="tag">KSM</span> Discreto ↔ Contínuo</p>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 18 -->
+  <section class="slide" id="slide-18">
+    <div class="slide-header"><span class="slide-number">18 / 25</span><h2>Módulo 5: Aplicações Transversais</h2></div>
+    <div class="slide-content">
+      <div class="grid-3">
+        <div class="card">🦠 <strong>Lei de Kleiber</strong><br>Metabolismo & massa corporal<br><span class="formula">B = k·M^(3/4)</span></div>
+        <div class="card">🔍 <strong>Lei de Benford</strong><br>Primeiro dígito & auditoria<br><span class="formula">P(d) = log₁₀(1+1/d)</span></div>
+        <div class="card">💊 <strong>Farmacocinética</strong><br>Meia-vida & concentração<br><span class="formula">t = -ln(C/C₀)/k</span></div>
+        <div class="card">🦴 <strong>Datação C-14</strong><br>Arqueologia & decaimento<br><span class="formula">N(t) = N₀e⁻λᵗ</span></div>
+        <div class="card">🌋 <strong>Escala Richter</strong><br>Energia sísmica & amplitude<br><span class="formula">M = log₁₀(A/A₀)</span></div>
+        <div class="card" style="background: var(--secondary); color: #000;">🎯 <strong>KSM</strong><br>Conexões Transversais</div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 19 -->
+  <section class="slide" id="slide-19">
+    <div class="slide-header"><span class="slide-number">19 / 25</span><h2>Mapeamento MTSK no Produto</h2></div>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div class="card">
+          <strong> MK</strong>
+          <ul>
+            <li><span class="tag">KoT</span> Fenomenologia histórica, irracionalidade, definições alternativas</li>
+            <li><span class="tag">KSM</span> Álgebra ↔ Geometria ↔ Análise ↔ Modelagem</li>
+            <li><span class="tag">KPM</span> Demonstrações, aproximações, raciocínio funcional</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>📗 PCK</strong>
+          <ul>
+            <li><span class="tag">KMT</span> Tábuas, réguas, GeoGebra, vídeos, roteiros reflexivos</li>
+            <li><span class="tag">KFLM</span> Antecipação de erros, empatia cognitiva, vivência do "impasse"</li>
+            <li><span class="tag">KMLS</span> Alinhamento explícito com BNCC e competências do EM</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top: 0.8rem; text-align: center;"><strong>🎯 Crenças:</strong> Transformação de "transmissor de conteúdo" para "mediador reflexivo".</p>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 20 -->
+  <section class="slide" id="slide-20">
+    <div class="slide-header"><span class="slide-number">20 / 25</span><h2>Dualidade do Saber & Metacognição</h2></div>
+    <div class="slide-content center" style="margin-top: 1rem;">
+      <div style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+        <span style="background: #e0f2fe; padding: 0.4rem 0.8rem; border-radius: 8px; margin: 0 0.3rem;">👨‍🎓 Licenciando ↔ Aprendiz</span>
+        <span style="font-size: 1.8rem; margin: 0 0.3rem;">⇄</span>
+        <span style="background: #fff3cd; padding: 0.4rem 0.8rem; border-radius: 8px; margin: 0 0.3rem;">👨‍🏫 Professor Reflexivo</span>
+      </div>
+      <ul style="text-align: left; max-width: 650px; margin: 0 auto;">
+        <li>Experiência direta com obstáculos cognitivos (calculadora, tábuas, áreas).</li>
+        <li>Perguntas guiadas ao final de cada atividade: <em>"Como adaptar ao EM?"</em>, <em>"Quais dificuldades os alunos terão?"</em></li>
+        <li>Formação técnica + formação pedagógica <strong>indissociáveis</strong> (Tardif, 2000).</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 21 -->
+  <section class="slide" id="slide-21">
+    <div class="slide-header"><span class="slide-number">21 / 25</span><h2>Conclusões</h2></div>
+    <div class="slide-content">
+      <ul>
+        <li>✅ Caracterização sistemática do MTSK para o ensino de logaritmos.</li>
+        <li>✅ Análise de duas abordagens <strong>complementares</strong> (inversa vs. área), sem hierarquização, mas com viabilidade didática.</li>
+        <li>✅ Curso de extensão estruturado em 5 módulos, alinhado à BNCC e fundamentado teoricamente.</li>
+        <li>✅ Resposta à pergunta: o ensino eficaz exige mobilização integrada dos 6 subdomínios, com ênfase no <strong>KoT</strong> (conceitual/fenomenológico) e <strong>KMT</strong> (estratégico/recursos).</li>
+      </ul>
+      <div class="highlight">O professor especializado não apenas "sabe fazer", mas "sabe por que, como e para quem" ensinar.</div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 22 -->
+  <section class="slide" id="slide-22">
+    <div class="slide-header"><span class="slide-number">22 / 25</span><h2>Contribuições e Limitações</h2></div>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div class="card" style="border-left-color: #28a745;">
+          <strong>✅ Contribuições</strong>
+          <ul>
+            <li>Mapeamento inédito do MTSK para logaritmos.</li>
+            <li>Material formativo pronto, de baixo custo e flexível.</li>
+            <li>Articulação explícita entre história, tecnologia e modelagem.</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left-color: #ffc107;">
+          <strong>⚠️ Limitações</strong>
+          <ul>
+            <li>Ausência de validação empírica/aplicação piloto nesta pesquisa.</li>
+            <li>Recorte focado na introdução conceitual e modelagem básica.</li>
+            <li>Não abrange avaliação formativa contínua ou resolução massiva de equações.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 23 -->
+  <section class="slide" id="slide-23">
+    <div class="slide-header"><span class="slide-number">23 / 25</span><h2>Perspectivas Futuras</h2></div>
+    <div class="slide-content center" style="margin-top: 1rem;">
+      <div class="grid-2">
+        <div class="card">🔬 <strong>Estudos Empíricos</strong><br>Aplicação com licenciandos e professores em serviço; validação e refinamento.</div>
+        <div class="card">🔄 <strong>Adaptação & Escala</strong><br>EJA, cursos técnicos, formação continuada; expansão para exponenciais, trigonometria, PA/PG.</div>
+        <div class="card">📊 <strong>Pesquisa Longitudinal</strong><br>Avaliação do impacto na aprendizagem, retenção conceitual e motivação dos alunos do EM.</div>
+        <div class="card">🧠 <strong>Crenças & Prática</strong><br>Investigar como as crenças docentes medeiam a mobilização efetiva do MTSK em sala.</div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 24 -->
+  <section class="slide" id="slide-24">
+    <div class="slide-header"><span class="slide-number">24 / 25</span><h2>Referências Principais</h2></div>
+    <div class="slide-content">
+      <ul style="column-count: 2; column-gap: 2rem; font-size: 0.95rem;">
+        <li>CARRILLO, J. et al. (2013, 2018) – <strong>MTSK</strong></li>
+        <li>BALL, D. L.; THAMES, M. H.; PHELPS, G. (2008) – <strong>MKT</strong></li>
+        <li>SHULMAN, L. S. (1986) – <strong>PCK</strong></li>
+        <li>TARDIF, M. (2000) – <strong>Saberes Docentes</strong></li>
+        <li>LIMA, E. L. (2001) – <strong>Logaritmos</strong></li>
+        <li>DUVAL, R. (2003, 2011) – <strong>TRRS</strong></li>
+        <li>BRASIL (2018) – <strong>BNCC</strong></li>
+        <li>EVES, H. (1992) – <strong>História da Matemática</strong></li>
+        <li>STEWART, J. (2013) – <strong>Cálculo</strong></li>
+        <li>VASCO, D. et al. (2017) – <strong>Categorias MTSK</strong></li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="nextSlide()">Próximo →</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 25 -->
+  <section class="slide" id="slide-25">
+    <div class="slide-header"><span class="slide-number">25 / 25</span><h2>Agradecimentos</h2></div>
+    <div class="slide-content center" style="margin-top: 1.5rem;">
+      <p>🙏 À Profa. Dra. Daniela Mendes Vieira da Silva e ao Prof. Dr. Marcello Montillo Provenza pela orientação.</p>
+      <p>👩‍🏫 Aos membros da Banca Examinadora pela disponibilidade e contribuições.</p>
+      <p>🤝 Aos companheiros do grupo <em>"Me Salva Profmat"</em> (Anderson, Ângelo, Jeffesson e Lígia) pelo apoio e pelas risadas nos momentos de tensão.</p>
+      <p>❤️ À minha família, pela paciência e incentivo constante.</p>
+      <blockquote style="margin-top: 1.5rem; font-size: 1.3rem; color: var(--primary); font-weight: bold;">"Esta dissertação é nossa!"</blockquote>
+      <p style="margin-top: 0.8rem; color: var(--text-light);">Muito obrigado.</p>
+    </div>
+    <div class="slide-footer">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <button class="nav-btn" onclick="prevSlide()">← Voltar</button>
+      <button class="nav-btn" onclick="alert('Fim da apresentação. Obrigado!')" disabled style="background:#28a745;">Encerrar ✅</button>
+    </div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+  <!-- OVERLAY DA APLICAÇÃO (Fica oculto até ser chamado) -->
+  <div id="app-overlay" class="app-overlay">
+    <div class="app-header">
+      <h3>📐 Transformação de Área: T(x, y) = (kx, y/k)</h3>
+      <button class="btn-close-app" onclick="closeApp()"> Voltar à Apresentação</button>
+    </div>
+    <iframe src="transforT.html" id="app-iframe" allowfullscreen></iframe>
+  </div>
+</html>

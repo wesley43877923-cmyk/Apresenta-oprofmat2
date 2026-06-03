@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Transformação de Área</title>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            height: 50px;
+        }
+
+        .header-icon {
+            width: 28px;
+            height: 28px;
+            background: #fff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            gap: 5px;
+            height: calc(100vh - 50px);
+            overflow: hidden;
+        }
+
+        .geogebra-container {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            min-height: 0;
+        }
+
+        #ggbApplet {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Barra Inferior Simplificada e Informativa */
+        .info-bar {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 8px;
+            padding: 15px 20px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 8px;
+            min-height: 80px;
+        }
+
+        .math-formula {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #222;
+            font-weight: bold;
+        }
+
+        .math-var {
+            color: #d32f2f; /* Destaque para a variável k */
+            font-style: italic;
+        }
+
+        .explanation {
+            font-size: 0.9rem;
+            color: #555;
+            max-width: 800px;
+            line-height: 1.3;
+        }
+
+        /* Controle simples para k */
+        .k-control-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+            background: #f0f2f5;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .k-label {
+            font-weight: bold;
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        input[type=range] {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        input[type=number] {
+            width: 50px;
+            padding: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+            font-family: inherit;
+        }
+
+        @media (max-width: 600px) {
+            .info-bar {
+                padding: 10px;
+            }
+            .math-formula {
+                font-size: 1rem;
+            }
+            .explanation {
+                font-size: 0.8rem;
+            }
+            input[type=range] {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-icon">📐</div>
+        <h1>Transformações Geométricas</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="geogebra-container">
+            <div id="ggbApplet"></div>
+        </div>
+
+        <!-- Barra Inferior com Explicação e Controle -->
+        <div class="info-bar">
+            <div class="math-formula">
+                T(x, y) = (<span class="math-var">k</span>x, y/<span class="math-var">k</span>)
+            </div>
+            <div class="explanation">
+                Transformação que preserva a Área ao ser aplicada nos pontos de polígonos.
+            </div>
+            
+            <!-- Controle integrado para permitir interação -->
+            <div class="k-control-container">
+                <span class="k-label">k =</span>
+                <input type="range" id="sliderK" min="0.1" max="5" step="0.1" value="2">
+                <input type="number" id="inputK" value="2" step="0.1" min="0.1" max="5">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ggbApplet;
+
+        function initializeGeoGebra() {
+            const parameters = {
+                "id": "ggbApplet",
+                "width": window.innerWidth,
+                "height": document.querySelector('.geogebra-container').offsetHeight,
+                "showMenuBar": false,
+                "showAlgebraInput": false,
+                "showAlgebraView": false, // Janela de álgebra oculta
+                "showResetIcon": false,
+                "enableLabelDrags": false,
+                "enableShiftDragZoom": true,
+                "enableRightClick": false,
+                "errorDialogsActive": false,
+                "showToolBar": false,
+                "showToolBarHelp": false,
+                "allowUpscale": true,
+                "capturingThreshold": null,
+                "scaleContainerClass": "geogebra-container",
+                "material_id": "saktmmxk", 
+                "appletOnLoad": function(api) {
+                    ggbApplet = api;
+
+                    setTimeout(() => {
+                        // Garante que a view de álgebra esteja fechada
+                        try {
+                            api.evalCommand("ShowView(\"Algebra\", false)");
+                        } catch (e) {}
+
+                        // Sincroniza valor inicial de k
+                        const initialK = document.getElementById('inputK').value;
+                        updateParameter('k', initialK);
+                        
+                        // Corrige tamanho
+                        forceResize();
+                    }, 800);
+                }
+            };
+
+            const applet = new GGBApplet(parameters, "5.0");
+            applet.inject("ggbApplet");
+        }
+
+        function evaluateExpression(expr) {
+            if (!expr) return 0;
+            expr = expr.toString().toLowerCase()
+                      .replace(/pi/g, 'Math.PI')
+                      .replace(/\be\b/g, 'Math.E')
+                      .replace(/(\d+)e(\d+)/g, '$1*Math.pow(10,$2)');
+            
+            try {
+                const result = Function('"use strict"; return (' + expr + ')')();
+                return result;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function updateParameter(param, value) {
+            if (!ggbApplet) return;
+            const evaluatedValue = evaluateExpression(value);
+            
+            if (evaluatedValue !== null && !isNaN(evaluatedValue)) {
+                try {
+                    ggbApplet.setValue(param, evaluatedValue);
+                } catch (e) {
+                    try {
+                        ggbApplet.evalCommand(param + ' = ' + evaluatedValue);
+                    } catch (err) { console.error(err); }
+                }
+            }
+        }
+
+        function forceResize() {
+            if (!ggbApplet) return;
+            const container = document.querySelector('.geogebra-container');
+            if (container) {
+                requestAnimationFrame(() => {
+                    ggbApplet.setSize(container.offsetWidth, container.offsetHeight);
+                });
+            }
+        }
+
+        // Lógica sincronizada entre Slider e Input Numérico
+        const sliderK = document.getElementById('sliderK');
+        const inputK = document.getElementById('inputK');
+
+        function updateK(val) {
+            const value = parseFloat(val);
+            if (isNaN(value)) return;
+            
+            // Atualiza ambos os campos
+            sliderK.value = value;
+            inputK.value = value;
+            
+            // Atualiza GeoGebra
+            updateParameter('k', value);
+        }
+
+        sliderK.addEventListener('input', (e) => updateK(e.target.value));
+        inputK.addEventListener('input', (e) => updateK(e.target.value));
+
+        // Previne submit ao dar enter
+        inputK.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') e.target.blur();
+        });
+
+        window.addEventListener('load', initializeGeoGebra);
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(forceResize, 100);
+        });
+    </script>
+</body>
+</html>
