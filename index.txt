@@ -49,11 +49,7 @@
   <section class="slide" id="slide-3">
     <div class="slide-header"><span class="slide-number">3 / 25</span><h2>Contextualização do Problema</h2></div>
     <div class="slide-content">
-      <div style="text-align: center; margin: 1rem 0;">
-        <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCUzTjg-oCcyGAjl63Ob168ym_JtcRzopNtmBJhs-stbpNzhgfNPGMXZ_Qc9OmZGQOHU0-DasFKouti4gYi_3PCD17tR0SelFNypnOnO4uRXtg9bpsDVZeBLe9ilrnKz8PUXBMRly1rhi_r5kE4sWuX9KohXpDoE7W3yS774ed6XKleOLxNYG8mYbp-m7CI_KXqUF28nywM-2h80_Yz4bLrHqQwkXq6x120=w1280" 
-             alt="MTSK" 
-             style="max-width: 400px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-      </div>
+     
       <div class="highlight">"Para que eu preciso estudar isso?"</div>
       <ul style="margin-top: 1rem;">
         <li>Ensino tradicional focado em manipulação algébrica e definição inversa da exponencial.</li>
